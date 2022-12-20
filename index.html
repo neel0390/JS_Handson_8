@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Kolker+Brush&family=Montserrat&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/f0293cd988.js" crossorigin="anonymous"></script>
+    <title>JS-Handson-8</title>
+  </head>
+  <body>
+    <h1 style="text-align: center">Array Of an Object</h1>
+    <hr />
+    <h3>1. Uppercase the Name of Data</h3>
+    <p>
+      "Question 1 : We are interested in retrieving only the name of the students and all the names should be in caps. ['JOHN', 'BABA', 'YAGA', 'WICK'] "let studentRecords = [ {name: 'John', id: 123, marks : 98 }, {name: 'Baba', id: 101, marks : 23 }, {name: 'yaga', id: 200, marks : 45 }, {name:
+      'Wick', id: 115, marks : 75 } ] " "
+    </p>
+    <pre>
+        let data = studentRecords.map((item)=>{
+            return item.name.toUpperCase()
+        })
+        console.log(data)
+    </pre>
+
+    <hr />
+
+    <h3>2. filter the data</h3>
+    <p>"Question 2: Suppose we have the same dataset as above but this time we want to get the details of students who scored more than 50 marks. [{name: 'John', id: 123, marks : 98 },{name: 'Wick', id: 115, marks : 75 }]"</p>
+    <pre>
+        let updatedMarks= studentRecords.filter((item)=>{
+            return  item.marks >50
+        })
+        console.log(updatedMarks)
+    </pre>
+    <hr />
+
+    <h3>3. filter the data</h3>
+    <p>Question 3: Retrieve the details of students who scored more than 50 marks and have id greater than 120.</p>
+    <pre>
+        let newdata = studentRecords.filter(item=> item.id>120 && item.marks>50)
+console.log(newdata)
+    </pre>
+    <hr />
+
+    <h3>4. sum of marks</h3>
+    <p>Question 4: Consider the same scenario we have discussed above, but this time we would like to know the sum total of the marks of the students.</p>
+    <pre>
+        let sum =0
+        let sumOfMarks = studentRecords.map((item)=>{   
+        sum += item.marks 
+        })
+        console.log(sum)
+    </pre>
+    <hr />
+
+    <h3>5. print name with given condition</h3>
+    <p>Question 5: This time we want to get only the names of the students who scored more than 50 marks from the same dataset used above.</p>
+    <pre>
+        let name = studentRecords.map((item)=>{
+            if(item.marks >50){
+            console.log(item.name) 
+            }
+        })
+    </pre>
+    <hr />
+
+    <h3>6. print marks with given condition</h3>
+    <p>Question 6: This time we are required to print the sum of marks of the students with id > 120.</p>
+    <pre>
+        let sum = 0
+        let data = studentRecords.map((item)=>{
+            if(item.id >120){
+            sum+= item.marks
+    }
+} )
+console.log(sum)
+    </pre>
+    <hr />
+
+    <script src="main.js"></script>
+  </body>
+</html>
